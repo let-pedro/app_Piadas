@@ -69,12 +69,14 @@ extension HomeViewController: HomeViewModelDelegate {
     
     func resultadoBuscarPiada(_ piada: Piada) {
         
+        print("-----Piadas \(piada)")
+        
         guard let urlImage = URL(string: piada.icon_url) else { return }
         print("piada ---\(piada)")
         
       
         
-        chucknorrisImage.UrlImage(url: piada.icon_url)
+        chucknorrisImage.kf.setImage(with: urlImage)
         piadaLabel.text = piada.value
     }
 }

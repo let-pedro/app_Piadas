@@ -28,6 +28,12 @@
 		F39CAD7128465E9D00BF220E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F39CAD7028465E9D00BF220E /* Kingfisher */; };
 		F3A7C3C82846932200187456 /* ProtocolViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A7C3C72846932200187456 /* ProtocolViewCode.swift */; };
 		F3A7C3CE284695B200187456 /* ResultadoBuscarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A7C3CD284695B200187456 /* ResultadoBuscarViewController.swift */; };
+		F3A7C3D22846A0C000187456 /* BuscarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A7C3D12846A0C000187456 /* BuscarService.swift */; };
+		F3A7C3DB2846A8B200187456 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A7C3DA2846A8B200187456 /* ResultModel.swift */; };
+		F3A7C3E12846B0D800187456 /* BuscarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A7C3E02846B0D800187456 /* BuscarProtocol.swift */; };
+		F3A7C3E42846B21000187456 /* ResultadoBuscarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A7C3E32846B21000187456 /* ResultadoBuscarView.swift */; };
+		F3A7C3E92846BA1400187456 /* PiadaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A7C3E82846BA1400187456 /* PiadaTableViewCell.swift */; };
+		F3A7C3EC2846C5F900187456 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A7C3EB2846C5F900187456 /* Utilities.swift */; };
 		F3AF67D72845C32B0096741A /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AF67D62845C32B0096741A /* CacheManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +58,12 @@
 		F39CAD6C2846541400BF220E /* BuscarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuscarViewModel.swift; sourceTree = "<group>"; };
 		F3A7C3C72846932200187456 /* ProtocolViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolViewCode.swift; sourceTree = "<group>"; };
 		F3A7C3CD284695B200187456 /* ResultadoBuscarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultadoBuscarViewController.swift; sourceTree = "<group>"; };
+		F3A7C3D12846A0C000187456 /* BuscarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuscarService.swift; sourceTree = "<group>"; };
+		F3A7C3DA2846A8B200187456 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
+		F3A7C3E02846B0D800187456 /* BuscarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuscarProtocol.swift; sourceTree = "<group>"; };
+		F3A7C3E32846B21000187456 /* ResultadoBuscarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultadoBuscarView.swift; sourceTree = "<group>"; };
+		F3A7C3E82846BA1400187456 /* PiadaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiadaTableViewCell.swift; sourceTree = "<group>"; };
+		F3A7C3EB2846C5F900187456 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		F3AF67D62845C32B0096741A /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -224,6 +236,7 @@
 		F3A7C3C6284692EB00187456 /* Ultils */ = {
 			isa = PBXGroup;
 			children = (
+				F3A7C3EB2846C5F900187456 /* Utilities.swift */,
 			);
 			path = Ultils;
 			sourceTree = "<group>";
@@ -231,9 +244,35 @@
 		F3A7C3CC2846959400187456 /* ResultadoBuscar */ = {
 			isa = PBXGroup;
 			children = (
+				F3A7C3E72846B9F900187456 /* Cell */,
+				F3A7C3E32846B21000187456 /* ResultadoBuscarView.swift */,
 				F3A7C3CD284695B200187456 /* ResultadoBuscarViewController.swift */,
 			);
 			path = ResultadoBuscar;
+			sourceTree = "<group>";
+		};
+		F3A7C3D52846A87200187456 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F3A7C3DA2846A8B200187456 /* ResultModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F3A7C3DD2846A97C00187456 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				F3A7C3E02846B0D800187456 /* BuscarProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		F3A7C3E72846B9F900187456 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F3A7C3E82846BA1400187456 /* PiadaTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		F3AF67D52845C3160096741A /* Resources */ = {
@@ -249,10 +288,12 @@
 		F3AF67D92845C5770096741A /* Buscar */ = {
 			isa = PBXGroup;
 			children = (
-				F39CAD67284653EE00BF220E /* ViewModel */,
 				F39CAD622846522B00BF220E /* Coordinator */,
-				F39CAD5A2846519B00BF220E /* View */,
+				F3A7C3DD2846A97C00187456 /* Protocol */,
 				F3AF67DA2845C5810096741A /* Networking */,
+				F3A7C3D52846A87200187456 /* Model */,
+				F39CAD67284653EE00BF220E /* ViewModel */,
+				F39CAD5A2846519B00BF220E /* View */,
 			);
 			path = Buscar;
 			sourceTree = "<group>";
@@ -260,6 +301,7 @@
 		F3AF67DA2845C5810096741A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				F3A7C3D12846A0C000187456 /* BuscarService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -346,8 +388,12 @@
 			files = (
 				F3A7C3CE284695B200187456 /* ResultadoBuscarViewController.swift in Sources */,
 				F39CAD60284651CE00BF220E /* BuscarViewController.swift in Sources */,
+				F3A7C3EC2846C5F900187456 /* Utilities.swift in Sources */,
+				F3A7C3DB2846A8B200187456 /* ResultModel.swift in Sources */,
 				F34983582841C2BD001C0EC1 /* AppCoordinator.swift in Sources */,
 				F349837D2841D028001C0EC1 /* HomeProtocol.swift in Sources */,
+				F3A7C3D22846A0C000187456 /* BuscarService.swift in Sources */,
+				F3A7C3E42846B21000187456 /* ResultadoBuscarView.swift in Sources */,
 				F34983622841C41B001C0EC1 /* HomeCoordinator.swift in Sources */,
 				F349833E2841C182001C0EC1 /* AppDelegate.swift in Sources */,
 				F34983792841CCAE001C0EC1 /* HomeViewModel.swift in Sources */,
@@ -355,11 +401,13 @@
 				F34983722841CB86001C0EC1 /* Piada.swift in Sources */,
 				F3AF67D72845C32B0096741A /* CacheManager.swift in Sources */,
 				F39CAD5C284651BC00BF220E /* BuscarView.swift in Sources */,
+				F3A7C3E92846BA1400187456 /* PiadaTableViewCell.swift in Sources */,
 				F3A7C3C82846932200187456 /* ProtocolViewCode.swift in Sources */,
 				F34983402841C182001C0EC1 /* SceneDelegate.swift in Sources */,
 				F34983752841CC82001C0EC1 /* HomeService.swift in Sources */,
 				F349836A2841C51F001C0EC1 /* HomeViewController.swift in Sources */,
 				F39CAD642846524200BF220E /* BuscarCoordinator.swift in Sources */,
+				F3A7C3E12846B0D800187456 /* BuscarProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

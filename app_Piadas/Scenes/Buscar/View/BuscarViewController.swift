@@ -9,7 +9,10 @@ class BuscarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.searchController = buscarView.buscarController
+        navigationItem.searchController = buscarView.buscarSearchController
+        
+        //buscarView.buscarController.searchResultsUpdater = self
+        buscarView.buscarSearchController.searchBar.delegate = self
     }
     
     
@@ -28,5 +31,29 @@ class BuscarViewController: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension BuscarViewController: UISearchResultsUpdating, UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let resultadoBuscar = buscarView.buscarSearchController.searchResultsController as? ResultadoBuscarViewController,
+              let query = buscarView.buscarSearchController.searchBar.text, !query.trimmingCharacters(in: .whitespaces).isEmpty else {
+            return
+        }
+        
+        resultadoBuscar.viewModel = viewModel
+        resultadoBuscar.efetuarBuscar(palavra: query)
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+//        guard let resultadoBuscar = searchController.searchResultsController as? ResultadoBuscarViewController,
+//              let query = searchController.searchBar.text, !query.trimmingCharacters(in: .whitespaces).isEmpty else {
+//            return
+//        }
+//
+//        print(query)
+        
+        
     }
 }

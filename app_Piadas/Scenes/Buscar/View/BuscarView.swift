@@ -2,8 +2,11 @@
 import UIKit
 
 class BuscarView: UIView {
+    
+    
+    // MARK: - Elementos View
 
-    var buscarController: UISearchController = {
+    var buscarSearchController: UISearchController = {
         let vc = UISearchController(searchResultsController: ResultadoBuscarViewController())
         vc.searchBar.placeholder = "Buscar por palavra"
         vc.searchBar.searchBarStyle = .minimal
@@ -13,13 +16,14 @@ class BuscarView: UIView {
     }()
     
     
-    private lazy var imagePerson: UIImageView = {
+    private lazy var ilutracaoSerchImage: UIImageView = {
         let image = UIImageView(image: UIImage(named: "Mask Group 2"))
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
+
     
-    
+    // MARK: - Init
     
     
     override init(frame: CGRect) {
@@ -33,18 +37,21 @@ class BuscarView: UIView {
     }
 }
 
+    // MARK: - Extensions
 
 extension BuscarView: ViewCode {
+    
+    
     func builHierarchy() {
-        addSubview(imagePerson)
+        addSubview(ilutracaoSerchImage)
     }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            imagePerson.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imagePerson.centerYAnchor.constraint(equalTo: centerYAnchor),
+            ilutracaoSerchImage.centerXAnchor.constraint(equalTo: centerXAnchor),
+            ilutracaoSerchImage.centerYAnchor.constraint(equalTo: centerYAnchor),
+
         ])
-        
     }
     
     func applyAdditionalChanges(){

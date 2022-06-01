@@ -18,6 +18,8 @@ class BuscarCoordinator {
     // MARK: - Atributos para coneção com outras Scenes
     
     
+    
+    
     // MARK: - init
     
     
@@ -30,11 +32,13 @@ class BuscarCoordinator {
     
     func start() {
         viewModel = BuscarViewModel()
+        viewModel?.viewNavigationDelegate = self
         guard let viewModel = viewModel else { return }
         
         controller = BuscarViewController(viewModel: viewModel)
         controller?.title = "Buscar Piadas"
         controller?.navigationItem.largeTitleDisplayMode = .always
+        //ResultBuscarController()
         
         guard let controller = controller else { return }
         
@@ -45,8 +49,20 @@ class BuscarCoordinator {
     
     
     
+    
     // MARK: - Métodos do Coordinator Onboarding
     
     
     
+}
+
+extension BuscarCoordinator: BuscarModelCoordinatorDelegate {
+    func BuscarViewModel_IrParaDetalhes(_ viewModel: BuscarViewModel) {
+//        let viewResultadoBuscar = ResultadoBuscarViewController()
+//        guard let viewModel = viewModel else { return }
+//
+//        viewResultadoBuscar.viewModel = viewModel
+        
+        print("Ir detalhes ")
+    }
 }
