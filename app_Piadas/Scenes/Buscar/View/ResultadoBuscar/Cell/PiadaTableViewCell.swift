@@ -5,14 +5,14 @@ class PiadaTableViewCell: UITableViewCell {
     static let identifier = "PiadaTableViewCell"
     
     
-    
     // MARK: - Elementos View
 
     lazy var piadaValueLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.tintColor = .black
+        label.tintColor = .gray
+        label.font = UIFont(name: "Inter-Regular", size: 18)
         label.adjustsFontSizeToFitWidth = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -24,7 +24,7 @@ class PiadaTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        
+        setupView()
     }
     
     required init?(coder: NSCoder) {
@@ -48,15 +48,14 @@ extension PiadaTableViewCell: ViewCode {
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            piadaValueLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
-            piadaValueLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            piadaValueLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            piadaValueLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             piadaValueLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            piadaValueLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 20),
         ])
         
     }
     
     func applyAdditionalChanges(){
-        backgroundColor = .white
+        backgroundColor = .clear
     }
 }

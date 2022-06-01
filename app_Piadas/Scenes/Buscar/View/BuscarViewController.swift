@@ -13,6 +13,8 @@ class BuscarViewController: UIViewController {
         
         //buscarView.buscarController.searchResultsUpdater = self
         buscarView.buscarSearchController.searchBar.delegate = self
+        //buscarView.buscarSearchController.searchResultsController?.addChild(ResultadoBuscarViewController(viewModel: viewModel))
+        //buscarView.buscarSearchController = ResultadoBuscarViewController(viewModel: viewModel)
     }
     
     
@@ -41,8 +43,6 @@ extension BuscarViewController: UISearchResultsUpdating, UISearchBarDelegate {
               let query = buscarView.buscarSearchController.searchBar.text, !query.trimmingCharacters(in: .whitespaces).isEmpty else {
             return
         }
-        
-        resultadoBuscar.viewModel = viewModel
         resultadoBuscar.efetuarBuscar(palavra: query)
     }
     

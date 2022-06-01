@@ -21,8 +21,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ABb-0t-NtK">
-                    <rect key="frame" x="67" y="137" width="281" height="180.5"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="chucknorris_logo" translatesAutoresizingMaskIntoConstraints="NO" id="ABb-0t-NtK">
+                    <rect key="frame" x="67" y="90" width="281" height="227.5"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7y-ec-3hr">
                     <rect key="frame" x="20" y="447.5" width="374" height="98.5"/>
@@ -69,8 +69,8 @@
                 <constraint firstItem="85P-gV-11C" firstAttribute="top" secondItem="YLh-ei-hFr" secondAttribute="bottom" constant="63" id="JrT-MR-KZE"/>
                 <constraint firstItem="k7y-ec-3hr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="OgX-Z9-4dl"/>
                 <constraint firstItem="k7y-ec-3hr" firstAttribute="top" secondItem="ABb-0t-NtK" secondAttribute="bottom" constant="130" id="SMO-SC-fiS"/>
-                <constraint firstItem="ABb-0t-NtK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="93" id="dCn-ug-2FW"/>
                 <constraint firstItem="YLh-ei-hFr" firstAttribute="top" secondItem="k7y-ec-3hr" secondAttribute="bottom" constant="100" id="gKV-nj-B1e"/>
+                <constraint firstItem="ABb-0t-NtK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="46" id="q14-F8-1UM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="85P-gV-11C" secondAttribute="bottom" constant="49" id="yLE-j4-FaB"/>
             </constraints>
             <point key="canvasLocation" x="-23.188405797101453" y="97.767857142857139"/>
@@ -78,6 +78,7 @@
     </objects>
     <resources>
         <image name="Shuffle" width="512" height="512"/>
+        <image name="chucknorris_logo" width="720" height="438"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

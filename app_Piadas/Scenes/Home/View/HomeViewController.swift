@@ -76,7 +76,7 @@ extension HomeViewController: HomeViewModelDelegate {
         
       
         
-        chucknorrisImage.kf.setImage(with: urlImage)
+        chucknorrisImage.UrlImage(url: piada.icon_url)
         piadaLabel.text = piada.value
     }
 }

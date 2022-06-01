@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailsViewController" customModule="app_Piadas" customModuleProvider="target">
+            <connections>
+                <outlet property="TextoPiadaLabel" destination="gdp-Cc-i76" id="Zdr-8B-Kzy"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdp-Cc-i76">
+                    <rect key="frame" x="24" y="305" width="366" height="136"/>
+                    <string key="text">Laboris nisi est eu excepteur labore pariatur sint. Id anim sunt enim nulla est ex Lorem nulla cillum pariatur et ex ipsum sunt commodo eu aute cillum cillum aute.</string>
+                    <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="21"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="270" translatesAutoresizingMaskIntoConstraints="NO" id="Hh6-jA-pGL">
+                    <rect key="frame" x="24" y="44" width="366" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQD-LK-2rD">
+                            <rect key="frame" x="0.0" y="0.0" width="48" height="40"/>
+                            <state key="normal" title="Voltar" image="back"/>
+                            <connections>
+                                <action selector="navigationButton:" destination="-1" eventType="touchUpInside" id="Dnn-0U-fGL"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbu-oh-yrl">
+                            <rect key="frame" x="318" y="0.0" width="48" height="40"/>
+                            <state key="normal" title="Fechar" image="close"/>
+                            <connections>
+                                <action selector="navigationButton:" destination="-1" eventType="touchUpInside" id="Rlc-DW-DWf"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="hgv-RP-8Jy"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="gdp-Cc-i76" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="JTT-dy-p8n"/>
+                <constraint firstItem="gdp-Cc-i76" firstAttribute="top" secondItem="Hh6-jA-pGL" secondAttribute="bottom" constant="221" id="S4B-Pe-ld6"/>
+                <constraint firstItem="Hh6-jA-pGL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Vcf-eE-piO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Hh6-jA-pGL" secondAttribute="trailing" constant="24" id="mdE-2j-MTu"/>
+                <constraint firstItem="Hh6-jA-pGL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="oMD-DW-lC8"/>
+                <constraint firstItem="gdp-Cc-i76" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="uZi-xI-yUw"/>
+                <constraint firstItem="gdp-Cc-i76" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-24" id="xd9-re-3Rr"/>
+            </constraints>
+            <point key="canvasLocation" x="-120.28985507246378" y="92.410714285714278"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back" width="512" height="512"/>
+        <image name="close" width="512" height="512"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

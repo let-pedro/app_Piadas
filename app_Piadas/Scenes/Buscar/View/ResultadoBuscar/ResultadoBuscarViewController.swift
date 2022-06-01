@@ -7,7 +7,7 @@ class ResultadoBuscarViewController: UIViewController {
     // MARK: - Variáveis
     
     var listaDePiadas: ResultModel?
-    var viewModel: BuscarViewModel?
+    var viewModel: BuscarViewModel!
     var View: ResultadoBuscarView!
     
     
@@ -28,10 +28,10 @@ class ResultadoBuscarViewController: UIViewController {
     }
     
     
-    init() {
+    init(viewModel: BuscarViewModel = .init()) {
         super.init(nibName: nil, bundle: nil)
         self.View = ResultadoBuscarView()
-        self.viewModel = BuscarViewModel()
+        self.viewModel = viewModel
     }
     
     required init?(coder: NSCoder) {
@@ -42,6 +42,7 @@ class ResultadoBuscarViewController: UIViewController {
     func configuraLayoutView(){
         
         View.tableView.dataSource = self
+        View.tableView.delegate = self
         viewModel?.viewModelDelegate = self
     }
     
@@ -64,7 +65,6 @@ extension ResultadoBuscarViewController: BuscarViewModelDelegate {
     
     func resultadoBuscaPiadas(_ piadas: ResultModel) {
         listaDePiadas = piadas
-        print("Saiu --\(listaDePiadas)")
     
         DispatchQueue.main.async {
             self.View.tableView.reloadData()
@@ -73,7 +73,7 @@ extension ResultadoBuscarViewController: BuscarViewModelDelegate {
 }
 
 
-extension ResultadoBuscarViewController: UITableViewDataSource {
+extension ResultadoBuscarViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listaDePiadas?.total ?? 0
     }
@@ -81,9 +81,15 @@ extension ResultadoBuscarViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = View.tableView.dequeueReusableCell(withIdentifier: PiadaTableViewCell.identifier, for: indexPath) as? PiadaTableViewCell else { return  UITableViewCell()}
 
+        let v = (listaDePiadas?.result[indexPath.row].value)!
         
-        cell.configureCell(piadaTexto: (listaDePiadas?.result[indexPath.row].value)!)
+        cell.configureCell(piadaTexto: v)
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(listaDePiadas?.result[indexPath.row].value)
     }
 }
     
