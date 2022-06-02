@@ -5,7 +5,7 @@ import Foundation
 
 protocol DetailsViewModelCoordinatorDelegate {
     func HomeViewModel_IrParaResultado(_ viewModel: DetailsViewModel)
-    func HomeViewModel_IrParaBusca(_ viewModel: DetailsViewModel)
+    func HomeViewModel_IrParaBusca(_ viewModel: DetailsViewModel, estadoInicial: Bool)
 }
 
 class  DetailsViewModel {
@@ -28,11 +28,11 @@ class  DetailsViewModel {
     // MARK: - Métodos
     
     
-    func navegacao(tag: Int){
+    func navegacao(tag: Int){        
         if tag == 0 {
-            viewNavigationDelegate?.HomeViewModel_IrParaList(self)
+            viewNavigationDelegate?.HomeViewModel_IrParaBusca(self, estadoInicial: true)
         } else {
-            viewNavigationDelegate?.HomeViewModel_IrParaBusca(self)
+            viewNavigationDelegate?.HomeViewModel_IrParaBusca(self, estadoInicial: false)
         }
     }
 }

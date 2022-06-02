@@ -23,16 +23,23 @@
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="chucknorris_logo" translatesAutoresizingMaskIntoConstraints="NO" id="ABb-0t-NtK">
                     <rect key="frame" x="67" y="90" width="281" height="227.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="281" id="r4X-0l-mgR"/>
+                        <constraint firstAttribute="height" constant="227.5" id="tpU-kC-7Pi"/>
+                    </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7y-ec-3hr">
                     <rect key="frame" x="20" y="447.5" width="374" height="98.5"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="98.5" id="KdT-Pa-LQ0"/>
+                    </constraints>
                     <string key="text">Laboris nisi est eu excepteur labore pariatur sint. Id anim sunt enim nulla est ex Lorem nulla cillum pariatur et ex ipsum sunt commodo eu aute cillum cillum aute.</string>
                     <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="19"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLh-ei-hFr" userLabel="Shuffle Button">
-                    <rect key="frame" x="182" y="646" width="48" height="48"/>
+                    <rect key="frame" x="183" y="646" width="48" height="48"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="48" id="Jad-h7-bCg"/>
                         <constraint firstAttribute="height" constant="48" id="Xcl-Qp-Jtj"/>
@@ -61,17 +68,16 @@
             <constraints>
                 <constraint firstItem="ABb-0t-NtK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="67" id="0Gg-C4-J4x"/>
                 <constraint firstItem="85P-gV-11C" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="87" id="1WS-dB-jsp"/>
-                <constraint firstItem="YLh-ei-hFr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="182" id="35J-j3-lwR"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="85P-gV-11C" secondAttribute="trailing" constant="87" id="3Me-ro-vEX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="k7y-ec-3hr" secondAttribute="trailing" constant="20" id="56u-Vy-dqM"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YLh-ei-hFr" secondAttribute="trailing" constant="184" id="BlH-NM-k8T"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ABb-0t-NtK" secondAttribute="trailing" constant="66" id="JPZ-Zn-qei"/>
                 <constraint firstItem="85P-gV-11C" firstAttribute="top" secondItem="YLh-ei-hFr" secondAttribute="bottom" constant="63" id="JrT-MR-KZE"/>
                 <constraint firstItem="k7y-ec-3hr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="OgX-Z9-4dl"/>
-                <constraint firstItem="k7y-ec-3hr" firstAttribute="top" secondItem="ABb-0t-NtK" secondAttribute="bottom" constant="130" id="SMO-SC-fiS"/>
                 <constraint firstItem="YLh-ei-hFr" firstAttribute="top" secondItem="k7y-ec-3hr" secondAttribute="bottom" constant="100" id="gKV-nj-B1e"/>
+                <constraint firstItem="YLh-ei-hFr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oPw-mH-b0d"/>
                 <constraint firstItem="ABb-0t-NtK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="46" id="q14-F8-1UM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="85P-gV-11C" secondAttribute="bottom" constant="49" id="yLE-j4-FaB"/>
+                <constraint firstItem="k7y-ec-3hr" firstAttribute="top" secondItem="ABb-0t-NtK" secondAttribute="bottom" constant="130" id="zgB-96-OJA"/>
             </constraints>
             <point key="canvasLocation" x="-23.188405797101453" y="97.767857142857139"/>
         </view>

@@ -9,7 +9,8 @@ protocol BuscarViewModelDelegate: AnyObject {
 
 
 protocol BuscarModelCoordinatorDelegate: AnyObject {
-    func BuscarViewModel_IrParaDetalhes(_ viewModel: BuscarViewModel)
+    func BuscarViewModel_IrParaHome(_ viewModel: BuscarViewModel)
+    func BuscarViewModel_IrParaDetalhes(_ viewModel: BuscarViewModel,piada: String)
 }
 
 
@@ -41,13 +42,41 @@ class BuscarViewModel {
             case .failure(let error):
                 self.viewModelDelegate?.Failure(error)
             case .success(let piadas):
-                print("ViewModel ----")
                 self.viewModelDelegate?.resultadoBuscaPiadas(piadas)
             }
         }
     }
     
-    func irParaDetailhesBusca(){
-        viewNavigationDelegate?.BuscarViewModel_IrParaDetalhes(self)
+    
+    func salvaUltimaPesquisar(key: String){
+        let palavraSalvar = KeyPesquisar(palavraKey: key)
+        service.backup(palavraSalvar){ result in
+            if result != nil {
+                print("Erro ao salvar")
+            }
+        }
+    }
+    
+    
+    func recuperarUltimaPesquisar(){
+        service.pegarBackup(){ result in
+            guard let palavraKey = result?.palavra else { return }
+            self.buscarPiadas(palavra: String(palavraKey))
+        }
+    }
+    
+    
+    func deleteTodasPesquisar(){
+        service.excluirTodosBackup()
+    }
+    
+    
+    func irParaDetailhesBusca(piadaValue: String){
+        viewNavigationDelegate?.BuscarViewModel_IrParaDetalhes(self, piada: piadaValue)
+    }
+    
+    
+    func irParaHome(){
+        viewNavigationDelegate?.BuscarViewModel_IrParaHome(self)
     }
 }

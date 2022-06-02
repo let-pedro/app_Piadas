@@ -10,10 +10,11 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var piadaLabel: UILabel!
     @IBOutlet weak var buscarButton: UIButton!
     
+    
     // MARK: - Variáveis
     
     var viewModel: HomeViewModel!
-    let service = HomeService()
+
     
     
     // MARK: - life cycle e configuração
@@ -64,19 +65,12 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: HomeViewModelDelegate {
     func Failure(_ error: Error?) {
-        print("Erro")
+        self.present(Alerta.Alert(Title: "Error", messageAlert: "Ocorreu um problema ao buscar um piada"), animated: true)
     }
     
     func resultadoBuscarPiada(_ piada: Piada) {
-        
-        print("-----Piadas \(piada)")
-        
         guard let urlImage = URL(string: piada.icon_url) else { return }
-        print("piada ---\(piada)")
-        
-      
-        
-        chucknorrisImage.UrlImage(url: piada.icon_url)
+        //chucknorrisImage.kf.setImage(with: urlImage)
         piadaLabel.text = piada.value
     }
 }

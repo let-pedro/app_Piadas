@@ -1,5 +1,6 @@
 
 import UIKit
+import Kingfisher
 
 class DetailsViewController: UIViewController {
     
@@ -7,6 +8,8 @@ class DetailsViewController: UIViewController {
     // MARK: - Outlet
     
     @IBOutlet weak var TextoPiadaLabel: UILabel!
+    @IBOutlet weak var gifImage: UIImageView!
+    
     
     // MARK: - Variáveis
     
@@ -18,7 +21,6 @@ class DetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         ApresentaPiada()
     }
     

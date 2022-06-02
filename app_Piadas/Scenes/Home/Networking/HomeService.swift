@@ -1,7 +1,6 @@
 
 import Foundation
 import Alamofire
-import AlamofireImage
 
 class HomeService {
     
@@ -18,23 +17,10 @@ class HomeService {
             
             do {
                 let piadaResult = try JSONDecoder().decode(Piada.self, from: data)
-                //self.pegarImage(urlImage: piadaResult.icon_url)
                 completion(.success(piadaResult))
             } catch {
                 completion(.failure(error))
             }
         }
     }
-    
-    
-    
-//    func pegarImage(urlImage: String){
-//        AF.request(urlImage).responseImage { Result in
-//
-//            let piadaResult = try JSONDecoder().decode([String].self, from: data)
-//            print("Image --\(Result.data)")
-//                print("Image --\(Result.result)")
-//        }
-//    }
-    
 }

@@ -1,5 +1,4 @@
 
-
 import Foundation
 import UIKit
 
@@ -30,7 +29,6 @@ struct HomeViewModel {
             case .failure(let error):
                 self.viewModelDelegate?.Failure(error)
             case .success(let piada):
-                //let imagem = self.imagem(piada.icon_url)
                 self.viewModelDelegate?.resultadoBuscarPiada(piada)
             }
         }
@@ -39,20 +37,5 @@ struct HomeViewModel {
     func irParaBusca(){
         viewNavigationDelegate?.HomeViewModel_IrParaBusca(self)
     }
-        
-//
-//
-//    func imagem(_ piadaImagem: String){
-//        service.pegarPiadaAleatoria(){ Result in
-//            switch Result {
-//            case .failure(let error):
-//                self.viewModelDelegate?.Failure(error)
-//            case .success(let piada):
-//                let imagem = self.imagem(piada.icon_url)
-//                self.viewModelDelegate?.resultadoBuscarPiada(piada)
-//            }
-//        }
-//
-//    }
 }
 

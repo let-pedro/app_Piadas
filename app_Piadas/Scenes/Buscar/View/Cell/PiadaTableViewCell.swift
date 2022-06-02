@@ -56,6 +56,6 @@ extension PiadaTableViewCell: ViewCode {
     }
     
     func applyAdditionalChanges(){
-        backgroundColor = .clear
+        backgroundColor = .white
     }
 }

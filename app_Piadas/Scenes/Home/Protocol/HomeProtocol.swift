@@ -1,8 +1,6 @@
 
 import Foundation
 
-
-
 protocol HomeViewModelDelegate {
     func Failure(_ error: Error?)
     func resultadoBuscarPiada(_ piada: Piada)

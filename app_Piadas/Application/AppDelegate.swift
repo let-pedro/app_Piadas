@@ -1,9 +1,3 @@
-//
-//  AppDelegate.swift
-//  app_Piadas
-//
-//  Created by Development IOS on 27/05/22.
-//
 
 import UIKit
 

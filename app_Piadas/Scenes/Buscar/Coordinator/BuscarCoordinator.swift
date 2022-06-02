@@ -2,7 +2,7 @@
 import UIKit
 
 
-class BuscarCoordinator {
+class BuscarCoordinator: BuscarModelCoordinatorDelegate {
     
     // MARK: - Atributos self
     
@@ -10,13 +10,14 @@ class BuscarCoordinator {
     var window: UIWindow
     var viewModel: BuscarViewModel?
     var controller: BuscarViewController?
-    var navigationController: UINavigationController?
-    
-    
+    var View: BuscarView?
+
     
     
     // MARK: - Atributos para coneção com outras Scenes
     
+    var ScenesHomeCoordinator: HomeCoordinator?
+    var ScenesDetailsCoordinator: DetailsCoordinator?
     
     
     
@@ -28,41 +29,34 @@ class BuscarCoordinator {
         self.window = window
     }
     
+
+    // MARK: - Métodos do Coordinator Onboarding
     
-    
-    func start() {
+    func start(_ emEstadoInicial: Bool) {
+        View = BuscarView()
         viewModel = BuscarViewModel()
         viewModel?.viewNavigationDelegate = self
-        guard let viewModel = viewModel else { return }
+        guard let viewModel = viewModel,
+              let view = View else { return }
         
-        controller = BuscarViewController(viewModel: viewModel)
-        controller?.title = "Buscar Piadas"
-        controller?.navigationItem.largeTitleDisplayMode = .always
-        //ResultBuscarController()
-        
+        controller = BuscarViewController(viewModel: viewModel, viewBuscar: view, estado: emEstadoInicial)
         guard let controller = controller else { return }
-        
-        navigationController = UINavigationController(rootViewController: controller)
-        navigationController?.navigationBar.prefersLargeTitles = true
-        window.rootViewController = navigationController
+        window.rootViewController = controller
     }
     
     
+    // MARK: - Navegacao
     
     
-    // MARK: - Métodos do Coordinator Onboarding
+    func BuscarViewModel_IrParaHome(_ viewModel: BuscarViewModel) {
+        ScenesHomeCoordinator = HomeCoordinator(window: window)
+        guard let BuscarCoordinator = self.ScenesHomeCoordinator else { return }
+        BuscarCoordinator.start()
+    }
     
-    
-    
-}
-
-extension BuscarCoordinator: BuscarModelCoordinatorDelegate {
-    func BuscarViewModel_IrParaDetalhes(_ viewModel: BuscarViewModel) {
-//        let viewResultadoBuscar = ResultadoBuscarViewController()
-//        guard let viewModel = viewModel else { return }
-//
-//        viewResultadoBuscar.viewModel = viewModel
-        
-        print("Ir detalhes ")
+    func BuscarViewModel_IrParaDetalhes(_ viewModel: BuscarViewModel, piada: String) {
+        ScenesDetailsCoordinator = DetailsCoordinator(window: window)
+        guard let BuscarCoordinator = self.ScenesDetailsCoordinator else { return }
+        BuscarCoordinator.start(piadaTexto: piada)
     }
 }

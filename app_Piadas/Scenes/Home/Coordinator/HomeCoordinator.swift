@@ -13,10 +13,9 @@ class HomeCoordinator: HomeViewModelCoordinatorDelegate {
     var controller: HomeViewController?
     
     
-    
     // MARK: - Atributos para coneção com outras Scenes
         
-
+    var ScenesBuscarViewModel: BuscarViewModel?
     var ScenesBuscarCoordinator: BuscarCoordinator?
     
     
@@ -33,9 +32,12 @@ class HomeCoordinator: HomeViewModelCoordinatorDelegate {
         viewModel = HomeViewModel()
         viewModel?.viewNavigationDelegate = self
         
-        guard let viewModel = viewModel else { return }
-        controller = HomeViewController(viewModel: viewModel)
-        window.rootViewController = controller
+        if let viewModel = viewModel {
+            controller = HomeViewController(viewModel: viewModel)
+            guard let controller = controller else { return }
+
+            window.rootViewController = controller
+        }
     }
     
     
@@ -43,7 +45,9 @@ class HomeCoordinator: HomeViewModelCoordinatorDelegate {
     
     func HomeViewModel_IrParaBusca(_ viewModel: HomeViewModel) {
         ScenesBuscarCoordinator = BuscarCoordinator(window: window)
+        ScenesBuscarViewModel = BuscarViewModel()
+        ScenesBuscarViewModel?.deleteTodasPesquisar()
         guard let BuscarCoordinator = self.ScenesBuscarCoordinator else { return }
-        BuscarCoordinator.start()
+        BuscarCoordinator.start(true)
     }
 }

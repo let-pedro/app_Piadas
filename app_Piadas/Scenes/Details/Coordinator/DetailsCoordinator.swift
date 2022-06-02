@@ -16,7 +16,7 @@ class DetailsCoordinator: DetailsViewModelCoordinatorDelegate {
     
 
     var ScenesBuscarCoordinator: BuscarCoordinator?
-    var SceneResultadotController: ResultadoBuscarViewController?
+    
 
 
 
@@ -41,13 +41,13 @@ class DetailsCoordinator: DetailsViewModelCoordinatorDelegate {
     // MARK: - Navegação
 
     func HomeViewModel_IrParaResultado(_ viewModel: DetailsViewModel) {
-        SceneResultadotController = ResultadoBuscarViewController()
-        window.rootViewController = SceneResultadotController
+        
+        print("Hello")
     }
     
-    func HomeViewModel_IrParaBusca(_ viewModel: DetailsViewModel) {
+    func HomeViewModel_IrParaBusca(_ viewModel: DetailsViewModel, estadoInicial: Bool) {
         ScenesBuscarCoordinator = BuscarCoordinator(window: window)
         guard let BuscarCoordinator = self.ScenesBuscarCoordinator else { return }
-        BuscarCoordinator.start()
+        BuscarCoordinator.start(estadoInicial)
     }
 }
